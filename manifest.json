@@ -1,15 +1,19 @@
 {
-  "manifest_version": 2,
+	"manifest_version": 2,
 
-  "name": "GTmetrix Analyzer Plugin",
-  "description": "This extension will analyze a page using GTmetrix",
-  "version": "1.0",
+	"name": "To Do",
+	"description": "A simple To Do extension.",
+	"version": "1.0.0",
 
-  "browser_action": {
-   "default_icon": "icon.png",
-   "default_popup": "popup.html"
-  },
-  "permissions": [
-   "activeTab"
-   ]
+	"icons": {
+		"32": "images/icon32.png",
+		"48": "images/icon48.png",
+		"128": "images/icon128.png"
+	},
+
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"options_page": "options.html"
 }
