@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Popup - To-Do</title> 
-    <link rel="stylesheet" href="css/{name}.css" type="text/css" />
-    <script src="js/{name}.js" type="text/javascript"></script>
+    <title>Popup - To-Do</title>
+    <link rel="stylesheet" href="css/popup.css" type="text/css" />
+    <script src="js/libs/jstemplate.js" type="text/javascript"></script>
+    <script src="js/popup.js" type="text/javascript"></script>
 </head>
 <body>
-    <h1>{name}</h1>
+    <h1>Things To-Do</h1>
+    <div id="results">
+        <div class="item" jsselect="$this" jsvalues="id:id">
+            <input type="checkbox" onchange="view.changeCompleted(this.parentNode.id, !!this.value)" class="completed" checked="checked" jsvalues="checked:completed" />
+            <span class="title" onkeyup="view.changeTitle(this.parentNode.id, this.innerText)" contenteditable="true" jscontent="title"></span>
+            <button class="remove" onclick="view.removeTask(this.parentNode.id)" title="Remove Task">Remove</button>
+        </div>
+    </div>
+    <input type="text" id="add" onkeyup="view.newTask(event)" placeholder="Write task and press enter..." />
 </body>
 </html>
